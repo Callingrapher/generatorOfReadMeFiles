@@ -3,44 +3,68 @@
 function renderLicenseBadge(license) {
   switch (license) {
     case "BSD 3-Clause":
+      if(license === "BSD 3-Clause")
       return "[![License: BSD 3-Clause](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)]";
+      break;
     case "GPL v3":
+      if(license === "GPL v3")
       return "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)]";
+      break;
     case "ISC":
+      if(license === "ISC")
       return "[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)]";
+      break;
     case "MIT":
+      if(license === "MIT")
       return "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]";
+      break;
     case "Unlicense":
+      if(license === "Unlicense")
       return "[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)]";
+      break;
     default:
       return "";
   }
 }
+ 
 
-//Function to generate badges for langs/features
+//Function to generate multiple badges for langs/features/etc.
 function renderLangBadge(badges) {
-  switch (badges) {
+  const temp = Object.values(badges);
+  const items  = [];
+  for (i = 0; i < temp.length; i++) {
+    // console.log("Testing to see if this loops enough times");
+  switch (temp[i]) {
     case "HTML":
-      return "![HTML](https://img.shields.io/badge/HTML-33%25-brightgreen?style=plastic&logo=HTML5)]";
+     items.push( "![HTML](https://img.shields.io/badge/HTML-33%25-brightgreen?style=plastic&logo=HTML5)]");
+      break;
     case "CSS":
-      return "[![CSS](https://img.shields.io/badge/CSS-33%25-blue?style=plastic&logo=CSS3)]";
+     items.push("[![CSS](https://img.shields.io/badge/CSS-33%25-blue?style=plastic&logo=CSS3)]");
+      break;
     case "JavaScript":
-      return "[![JS](https://img.shields.io/badge/JavaScript-34%25-orange)]";
+      items.push("[![JS](https://img.shields.io/badge/JavaScript-34%25-orange)]");
+      break;
     case "MySQL":
-      return "[![MySQL](https://img.shields.io/badge/MySQL-vs.8.0.23-yellow.svg)]";
+     items.push("[![MySQL](https://img.shields.io/badge/MySQL-vs.8.0.23-yellow.svg)]");
+      break;
     case "AJAX":
-      return "[![AJAX](https://img.shields.io/badge/AJAX-Bloop-blue.svg)]";
+     items.push("[![AJAX](https://img.shields.io/badge/AJAX-Bloop-blue.svg)]");
+      break;
     case "JSON":
-      return "[![JSON](https://img.shields.io/badge/JSON-Bloop-blue.svg)]";
+     items.push("[![JSON](https://img.shields.io/badge/JSON-Bloop-blue.svg)]");
+      break;
     case "Inquirer":
-      return "[![Inquirer](https://img.shields.io/badge/Inquirer-3rdParty-blue.svg)]";
+     items.push("[![Inquirer](https://img.shields.io/badge/Inquirer-3rdParty-blue.svg)]");
+      break;
     case "FS":
-      return "[![FS](https://img.shields.io/badge/FileSystem-internal-blue.svg)]";
+     items.push("[![FS](https://img.shields.io/badge/FileSystem-internal-blue.svg)]");
+      break;
     case "Node.js":
-      return "[![Node.js](https://img.shields.io/badge/Node-.JS-blue.svg)]";
+     items.push("[![Node.js](https://img.shields.io/badge/Node-.JS-blue.svg)]");
+      break;
     default:
-      return "";
-  }
+     items.push ("");
+  }} return items.join(" ");
 }
 
 // TODO: Create a function that returns the license link
@@ -48,15 +72,25 @@ function renderLangBadge(badges) {
 function renderLicenseLink(license) {
   switch (license) {
     case "BSD 3-Clause":
+      if(license === "BSD 3-Clause")
       return "(https://opensource.org/licenses/BSD-3-Clause)";
+      break;
     case "GPL v3":
+      if(license === "GPL v3")
       return "(https://www.gnu.org/licenses/gpl-3.0)";
+      break;
     case "ISC":
+      if(license === "ISC")
       return "(https://opensource.org/licenses/ISC)";
+      break;
     case "MIT":
+      if(license === "MIT")
       return "(https://opensource.org/licenses/MIT)";
+      break;
     case "Unlicense":
+      if(license === "Unlicense")
       return "(http://unlicense.org)";
+      break;
     default:
       return "";
   }
@@ -104,7 +138,7 @@ function generateMarkdown(data) {
   ## Features
   ${data.features}
   ## Tests
-  To test, run the following command:  
+  To test the programme, in the command line run:  
   \`\`\`
   ${data.testCmd}
   \`\`\`
@@ -115,9 +149,3 @@ function generateMarkdown(data) {
 }
 
 module.exports = generateMarkdown;
-
-
-//format for badges
-// ![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
-//![](https://img.shields.io/)
-//link to shields  [shields.io](https://shields.io/).

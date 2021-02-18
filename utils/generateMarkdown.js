@@ -36,22 +36,22 @@ function renderLangBadge(badges) {
     // console.log("Testing to see if this loops enough times");
   switch (temp[i]) {
     case "HTML":
-     items.push( "![HTML](https://img.shields.io/badge/HTML-33%25-brightgreen?style=plastic&logo=HTML5)]");
+     items.push( "![HTML](https://img.shields.io/badge/HTML-Don't_You_Know_It-brightgreen?style=plastic&logo=HTML5)]");
       break;
     case "CSS":
-     items.push("[![CSS](https://img.shields.io/badge/CSS-33%25-blue?style=plastic&logo=CSS3)]");
+     items.push("[![CSS](https://img.shields.io/badge/CSS-Sure_Thing-blue?style=plastic&logo=CSS3)]");
       break;
     case "JavaScript":
-      items.push("[![JS](https://img.shields.io/badge/JavaScript-34%25-orange)]");
+      items.push("[![JS](https://img.shields.io/badge/JavaScript-But_Of_Course-orange)]");
       break;
     case "MySQL":
      items.push("[![MySQL](https://img.shields.io/badge/MySQL-vs.8.0.23-yellow.svg)]");
       break;
     case "AJAX":
-     items.push("[![AJAX](https://img.shields.io/badge/AJAX-Bloop-blue.svg)]");
+     items.push("[![AJAX](https://img.shields.io/badge/AJAX-Only_The_Best-blue.svg)]");
       break;
     case "JSON":
-     items.push("[![JSON](https://img.shields.io/badge/JSON-Bloop-blue.svg)]");
+     items.push("[![JSON](https://img.shields.io/badge/JSON-Not_Derulo-blue.svg)]");
       break;
     case "Inquirer":
      items.push("[![Inquirer](https://img.shields.io/badge/Inquirer-3rdParty-blue.svg)]");
